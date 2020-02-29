@@ -1,4 +1,5 @@
 /* Colors */
+/* Mixins */
 * {
   margin: 0;
   padding: 0;
@@ -13,13 +14,14 @@ body {
   margin: 0 auto; }
 
 .button {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
   border: 1px solid #ffffff;
   border-radius: 6px;
   min-width: 100px;
   min-height: 40px;
   text-transform: uppercase;
-  font-size: 14px;
-  line-height: 17px;
   cursor: pointer;
   color: #fff; }
   .button__transparent {
@@ -37,7 +39,7 @@ body {
   position: absolute;
   width: 100%;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 0 20px; }
   .header__wrapper {
     display: grid;
@@ -71,11 +73,11 @@ body {
     grid-auto-flow: column;
     column-gap: 23px; }
   .nav__item {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 17px;
     list-style: none;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
     cursor: pointer; }
 
 .language {
@@ -98,12 +100,34 @@ body {
   background: url(../assets/images/bg.svg) no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1; }
-  .showcase:before {
+  z-index: 2;
+  display: grid;
+  color: #fff; }
+  .showcase::after {
     content: "";
     position: absolute;
+    z-index: -1;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background: linear-gradient(90deg, rgba(213, 32, 71, 0.8) 0%, rgba(238, 61, 27, 0.8) 100%); }
+  .showcase__wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+  .showcase__title {
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 86px;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    align-self: end; }
+  .showcase__description {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    text-align: center; }
+  .showcase__signup {
+    align-self: start; }

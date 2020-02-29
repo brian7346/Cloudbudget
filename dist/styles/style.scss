@@ -4,6 +4,13 @@ $dark: #000;
 $primary: #ee3d1b;
 $secondary: #d52047;
 
+/* Mixins */
+@mixin font($size, $height, $weight: normal) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,13 +28,12 @@ body {
 }
 
 .button {
+  @include font(14px, 17px);
   border: 1px solid #ffffff;
   border-radius: 6px;
   min-width: 100px;
   min-height: 40px;
   text-transform: uppercase;
-  font-size: 14px;
-  line-height: 17px;
   cursor: pointer;
   color: $light;
 
@@ -52,7 +58,7 @@ body {
   position: absolute;
   width: 100%;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 0 20px;
 
   &__wrapper {
@@ -97,11 +103,9 @@ body {
   }
 
   &__item {
+    @include font(14px, 17px, bold);
     list-style: none;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
     cursor: pointer;
   }
 }
@@ -132,11 +136,14 @@ body {
   background: url(../assets/images/bg.svg) no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  display: grid;
+  color: $light;
 
-  &:before {
+  &::after {
     content: "";
     position: absolute;
+    z-index: -1;
     top: 0;
     bottom: 0;
     left: 0;
@@ -146,5 +153,28 @@ body {
       rgba(213, 32, 71, 0.8) 0%,
       rgba(238, 61, 27, 0.8) 100%
     );
+  }
+
+  &__wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    @include font(72px, 86px, bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    align-self: end;
+  }
+
+  &__description {
+    @include font(24px, 150%, 600);
+    text-align: center;
+  }
+
+  &__signup {
+    align-self: start;
   }
 }
