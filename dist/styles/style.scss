@@ -25,6 +25,7 @@ body {
 .container {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .button {
@@ -59,7 +60,6 @@ body {
   width: 100%;
   top: 0;
   z-index: 3;
-  padding: 0 20px;
 
   &__wrapper {
     display: grid;
@@ -176,5 +176,61 @@ body {
 
   &__signup {
     align-self: start;
+  }
+}
+
+/* Section Video */
+.video {
+  min-height: 500px;
+  display: grid;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 125px;
+  }
+}
+
+.left {
+  &__title {
+    @include font(36px, 43px, 600);
+  }
+
+  &__description {
+    @include font(14px, 140%);
+  }
+
+  &__learn-more {
+    @include font(14px, 140%);
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.right {
+  justify-self: end;
+  &__video {
+    width: 445px;
+    height: 311px;
+    position: relative;
+    background: url(../assets/images/video.svg);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -33px;
+      transform: translateY(-50%);
+      width: 66px;
+      height: 66px;
+      background: url(../assets/images/arrow.svg) $primary no-repeat center;
+      border-radius: 50%;
+      transform: rotate(-90deg) translateX(50%);
+      cursor: pointer;
+    }
   }
 }
