@@ -1,14 +1,24 @@
 /* Colors */
 $light: #fff;
+$gray: #fafafa;
 $dark: #000;
 $primary: #ee3d1b;
 $secondary: #d52047;
 
-/* Mixins */
+// Mixins
 @mixin font($size, $height, $weight: normal) {
   font-size: $size;
   font-weight: $weight;
   line-height: $height;
+}
+
+@mixin learn-more {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $secondary;
+  }
 }
 
 * {
@@ -21,16 +31,17 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-/* Global */
+// Global
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 10px;
 }
 
 .button {
   @include font(14px, 17px);
-  border: 1px solid #ffffff;
+  border: 1px solid $light;
   border-radius: 6px;
   min-width: 100px;
   min-height: 40px;
@@ -52,7 +63,7 @@ body {
   }
 }
 
-/* Header */
+// Header
 .header {
   color: $light;
   background: transparent;
@@ -130,7 +141,7 @@ body {
   align-items: center;
 }
 
-/* Section Showcase */
+// Section Showcase
 .showcase {
   height: 100vh;
   background: url(../assets/images/bg.svg) no-repeat;
@@ -179,7 +190,7 @@ body {
   }
 }
 
-/* Section Video */
+// Section Video
 .video {
   min-height: 500px;
   display: grid;
@@ -193,6 +204,9 @@ body {
 }
 
 .left {
+  display: grid;
+  row-gap: 25px;
+
   &__title {
     @include font(36px, 43px, 600);
   }
@@ -203,12 +217,7 @@ body {
 
   &__learn-more {
     @include font(14px, 140%);
-    color: $primary;
-    text-decoration: none;
-
-    &:hover {
-      color: $secondary;
-    }
+    @include learn-more;
   }
 }
 
@@ -232,5 +241,63 @@ body {
       transform: rotate(-90deg) translateX(50%);
       cursor: pointer;
     }
+  }
+}
+
+// Section Features
+.features {
+  background: $gray;
+  min-height: 660px;
+
+  &__wrapper {
+    display: grid;
+    width: 100%;
+  }
+
+  &__title {
+    @include font(36px, 43px, 600);
+    text-align: center;
+    padding: 63px 0;
+  }
+
+  &__cards {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+    justify-content: center;
+  }
+
+  &__card {
+    width: 350px;
+    height: 250px;
+    position: relative;
+  }
+}
+
+.overtext {
+  display: grid;
+  position: absolute;
+  min-width: 293px;
+  background: $light;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  padding: 33px 32px 25px 25px;
+  top: 157px;
+  left: 50%;
+  transform: translateX(-50%);
+  row-gap: 25px;
+
+  &__title {
+    @include font(18px, 22px, bold);
+  }
+
+  &__description {
+    @include font(12px, 150%);
+  }
+
+  &__read-more {
+    @include font(12px, 150%, bold);
+    @include learn-more;
   }
 }
