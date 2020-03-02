@@ -301,3 +301,63 @@ body {
     @include learn-more;
   }
 }
+
+// Technology
+.technology {
+  background: $light;
+  min-height: 500px;
+
+  &__wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__title {
+    @include font(36px, 43px, 600);
+    padding: 63px 0;
+    text-align: center;
+  }
+
+  &__cards {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+  }
+
+  &__card {
+    position: relative;
+    min-width: 255px;
+    min-height: 226px;
+  }
+
+  &__count {
+    @include font(100px, 120px, bold);
+    text-align: center;
+    color: rgba(16, 16, 16, 0.08);
+  }
+}
+
+.overview {
+  position: absolute;
+  top: 68px;
+  display: grid;
+  justify-content: center;
+  row-gap: 11px;
+
+  &__logo {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    justify-self: center;
+  }
+
+  &__title {
+    @include font(18px, 22px, bold);
+  }
+
+  &__description {
+    @include font(12px, 14px);
+  }
+}

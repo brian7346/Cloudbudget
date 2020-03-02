@@ -229,3 +229,52 @@ body {
     text-decoration: none; }
     .overtext__read-more:hover {
       color: #d52047; }
+
+.technology {
+  background: #fff;
+  min-height: 500px; }
+  .technology__wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+  .technology__title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 43px;
+    padding: 63px 0;
+    text-align: center; }
+  .technology__cards {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px; }
+  .technology__card {
+    position: relative;
+    min-width: 255px;
+    min-height: 226px; }
+  .technology__count {
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: center;
+    color: rgba(16, 16, 16, 0.08); }
+
+.overview {
+  position: absolute;
+  top: 68px;
+  display: grid;
+  justify-content: center;
+  row-gap: 11px; }
+  .overview__logo {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    justify-self: center; }
+  .overview__title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px; }
+  .overview__description {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 14px; }
