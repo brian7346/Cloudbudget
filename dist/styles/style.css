@@ -157,8 +157,15 @@ body {
     text-decoration: none; }
     .left__learn-more:hover {
       color: #d52047; }
+  .left__socials {
+    display: grid;
+    grid-template-columns: repeat(3, 32px);
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 14px; }
 
 .right {
+  display: grid;
   justify-self: end; }
   .right__video {
     width: 445px;
@@ -278,3 +285,30 @@ body {
     font-size: 12px;
     font-weight: normal;
     line-height: 14px; }
+
+.download {
+  min-height: 500px;
+  background: #ee3d1b;
+  color: #fff;
+  display: grid; }
+  .download__wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 125px;
+    grid-template-columns: 1fr 1fr; }
+
+.images {
+  display: grid;
+  grid-auto-flow: column;
+  position: relative; }
+  .images img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  .images__back-1 {
+    left: -44px;
+    transform: translateX(44px); }
+  .images__back-2 {
+    right: 44px;
+    transform: translateX(-44px); }
